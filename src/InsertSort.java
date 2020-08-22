@@ -23,18 +23,18 @@ public class InsertSort {
         }
     }*/
     public static void Sort2(int []arr) {
-        int n = arr.length;
-        for(int i = 1; i<n; i++) {
-            int j;
-            int tmp = arr[i];
-            for(j=i-1;j>=0;j--) {
-                if(arr[j]>tmp) {
-                    arr[j+1] = arr[j];
+        for(int bound = 1; bound<arr.length; bound++) {
+            int tmp = arr[bound];
+            int cur;
+            for (cur = bound-1;cur>=0; cur--) {
+                if(arr[cur]>tmp) {
+                    arr[cur+1] = arr[cur];
                 }else {
                     break;
                 }
             }
-            arr[j+1] = tmp;
+            arr[cur+1] = tmp;
         }
     }
-}
+    }
+
